@@ -1,5 +1,7 @@
 # ResuMate AI – ATS Resume Matcher
 
+![coverage](https://img.shields.io/badge/coverage-79%25-yellowgreen)
+
 A Python-based automation framework for parsing resumes, calculating ATS match scores, and generating PDF reports.
 
 ## ✅ Features
