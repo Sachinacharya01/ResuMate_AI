@@ -1,3 +1,7 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/Sachinacharya01/ResuMate_AI)
+![GitHub stars](https://img.shields.io/github/stars/Sachinacharya01/ResuMate_AI?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Sachinacharya01/ResuMate_AI?style=social)
+
 # 🧠 ResuMate_AI
 
 **ResuMate_AI** is an AI-powered resume evaluator that matches resumes with job descriptions (JDs) to calculate:
