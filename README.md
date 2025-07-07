@@ -1,29 +1,35 @@
-# 📄 ResuMate AI
+# 🧠 ResuMate_AI
 
-**ResuMate_AI** is an AI-powered resume matcher and ATS scoring tool that compares your resume with job descriptions using keyword extraction, fuzzy matching, and semantic analysis.
+**ResuMate_AI** is an AI-powered resume evaluator that matches resumes with job descriptions (JDs) to calculate:
+- ✅ ATS keyword score
+- 🤖 Semantic similarity score
+- 📊 Category-wise breakdown (Skills, Tools, Cloud, Concepts, Soft Skills)
+- 🧾 Resume structure completeness (Sections like Skills, Experience, Education, etc.)
+
+Built with **Streamlit**, **NLP**, and **ML models** like `SentenceTransformer`, it's designed to help job seekers and recruiters optimize resumes.
+
+---
 
 ## 🚀 Features
 
-- ATS Score with detailed keyword breakdown
-- Resume structure validation (Skills, Projects, etc.)
-- Semantic similarity using Sentence Transformers
-- Missing keyword insights by category (Skills, Tools, Cloud, etc.)
-- Streamlit UI with downloadable report
+- 📥 Upload resume (PDF, DOCX)
+- 📄 Paste or upload job description
+- ⚙️ Extract keywords using KeyBERT
+- 🔍 Fuzzy + Semantic matching for accurate scoring
+- 📊 Visual score breakdown per category
+- 🧠 AI suggestions for missing keywords (optional)
+- 📄 Resume structure analysis (Skills, Experience, Education...)
 
-## 🧠 Built With
+---
 
-- Python
-- Streamlit
-- NLTK, spaCy
-- Sentence Transformers
-- KeyBERT
+## 🖥 Demo
 
-## 📦 Setup
+<img src="https://user-images.githubusercontent.com/placeholder/demo.gif" width="700"/>
 
+---
+
+## 📦 Requirements
+
+> Install dependencies via `requirements.txt`  
 ```bash
-git clone https://github.com/Sachinacharya01/ResuMate_AI.git
-cd ResuMate_AI
-python -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
-streamlit run streamlit_app.py
