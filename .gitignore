@@ -1,0 +1,16 @@
+# Bytecode & Cache
+__pycache__/
+*.pyc
+
+# Virtual Environments
+venv*/
+*/bin/
+*/lib/
+*/include/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+*.iml

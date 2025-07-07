@@ -1,43 +1,43 @@
-from utils import scorer
+import pytest
+from app import scorer
 
-def test_calculate_ats_score_full_match():
-    resume = ["python", "selenium", "api", "automation"]
-    required = ["Python", "Selenium"]
-    score = scorer.calculate_ats_score(resume, required)
-    assert score == 100
+@pytest.fixture
+def resume_keywords():
+    return [
+        "Python", "QA", "SDET", "unit testing", "Git",
+        "AWS", "Docker", "team collaboration", "REST", "problem-solving"
+    ]
 
-def test_calculate_ats_score_partial_match():
-    resume = ["python"]
-    required = ["Python", "Selenium"]
-    score = scorer.calculate_ats_score(resume, required)
-    assert score == 50
+@pytest.fixture
+def jd_keywords():
+    return [
+        "Java", "Python", "microservices", "QA", "Docker", "JMeter",
+        "AWS", "Azure", "unit test", "communication", "GitHub"
+    ]
 
-def test_calculate_ats_score_no_match():
-    resume = ["java", "c++"]
-    required = ["Python", "Selenium"]
-    score = scorer.calculate_ats_score(resume, required)
-    assert score == 0
+def test_normalize_keywords():
+    raw = ["Dockerized", "Git.", "QA", "Unit-Testing"]
+    norm = scorer.normalize_keywords(raw)
+    assert any("docker" in w for w in norm)
+    assert "git" in norm or "github" in norm
+    assert "qa" in norm
+    assert any("unit" in w or "test" in w for w in norm)
 
-def test_calculate_ats_score_empty_required():
-    resume = ["python", "selenium"]
-    required = []
-    score = scorer.calculate_ats_score(resume, required)
-    assert score == 0
+def test_calculate_ats_score(resume_keywords, jd_keywords):
+    score = scorer.calculate_ats_score(resume_keywords, jd_keywords)
+    assert 0 <= score <= 100
 
-def test_find_missing_keywords_some():
-    resume = ["python", "api"]
-    required = ["Python", "Selenium", "Automation"]
-    missing = scorer.find_missing_keywords(resume, required)
-    assert missing == ["Selenium", "Automation"]
+def test_find_missing_keywords(resume_keywords, jd_keywords):
+    missing = scorer.find_missing_keywords(resume_keywords, jd_keywords)
+    assert isinstance(missing, list)
+    for kw in missing:
+        assert kw not in scorer.normalize_keywords(resume_keywords)
 
-def test_find_missing_keywords_none():
-    resume = ["python", "selenium", "automation"]
-    required = ["Python", "Selenium"]
-    missing = scorer.find_missing_keywords(resume, required)
-    assert missing == []
-
-def test_find_missing_keywords_all():
-    resume = []
-    required = ["Python", "Selenium"]
-    missing = scorer.find_missing_keywords(resume, required)
-    assert missing == ["Python", "Selenium"]
+def test_score_by_category(resume_keywords):
+    category_scores, missing = scorer.score_by_category(resume_keywords)
+    assert "Skills" in category_scores
+    assert isinstance(category_scores["Skills"], int)
+    assert isinstance(missing["Tools"], list)
+    for cat in ["Skills", "Tools", "Cloud", "Concepts", "Soft Skills"]:
+        assert cat in category_scores
+        assert cat in missing

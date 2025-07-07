@@ -1,0 +1,29 @@
+Position: Senior QA Automation Engineer (SDET)
+Location: Hybrid – Bangalore, India
+Experience: 4+ years
+Type: Full-Time
+
+🔍 Job Overview:
+We are looking for a highly motivated SDET to drive quality across our product platform. The ideal candidate is passionate about test automation, performance testing, and CI/CD integration in cloud-native environments.
+
+🛠 Responsibilities:
+Design, develop, and maintain automated test frameworks using Python or Java
+Write and execute API and UI test cases using Postman, Selenium, and PyTest
+Implement performance tests using JMeter, Locust, or equivalent tools
+Collaborate closely with developers to identify edge cases and create meaningful test coverage
+Integrate automated tests into GitHub Actions CI/CD pipelines
+Conduct unit, integration, and regression testing on RESTful APIs
+Work in Agile teams and actively participate in sprint planning, demos, and retrospectives
+Ensure tests run on containerized environments using Docker
+🎯 Requirements:
+4+ years of QA Automation experience in SaaS-based environments
+Expertise in Python, Java, or similar languages
+Hands-on experience with REST APIs, Swagger, and API validation
+Familiarity with cloud platforms like AWS, Azure, or GCP
+Experience with containerization and DevOps tools (Docker, GitHub Actions)
+Strong analytical and problem-solving skills
+Excellent communication and teamwork abilities
+🏆 Nice to Have:
+Exposure to microservices and distributed systems
+Knowledge of Kubernetes and cloud-native testing
+Relevant certifications in AWS, QA Testing, or Automation Tools

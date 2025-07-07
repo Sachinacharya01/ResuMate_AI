@@ -1,18 +1,29 @@
-# ResuMate AI – ATS Resume Matcher
+# 📄 ResuMate AI
 
-![coverage](https://img.shields.io/badge/coverage-79%25-yellowgreen)
+**ResuMate_AI** is an AI-powered resume matcher and ATS scoring tool that compares your resume with job descriptions using keyword extraction, fuzzy matching, and semantic analysis.
 
-A Python-based automation framework for parsing resumes, calculating ATS match scores, and generating PDF reports.
+## 🚀 Features
 
-## ✅ Features
-- Parse `.pdf` and `.docx` resumes
-- Extract sections: Skills, Experience, Education, etc.
-- Score resumes using keyword match logic
-- Generate PDF reports with missing keywords
-- 80%+ test coverage (pytest + coverage)
+- ATS Score with detailed keyword breakdown
+- Resume structure validation (Skills, Projects, etc.)
+- Semantic similarity using Sentence Transformers
+- Missing keyword insights by category (Skills, Tools, Cloud, etc.)
+- Streamlit UI with downloadable report
 
-## 🚀 Getting Started
+## 🧠 Built With
 
-### 1. Install requirements
+- Python
+- Streamlit
+- NLTK, spaCy
+- Sentence Transformers
+- KeyBERT
+
+## 📦 Setup
+
 ```bash
-pip install -r requirements.txt# ResuMate_AI
+git clone https://github.com/Sachinacharya01/ResuMate_AI.git
+cd ResuMate_AI
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+streamlit run streamlit_app.py
